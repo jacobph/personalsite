@@ -1,0 +1,213 @@
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
+  <style>
+    body * {
+      box-sizing:border-box;
+    }
+    body{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: #030303;
+      padding:0 0 0 15px;
+      margin: 0 0 0 0;
+
+    }
+    .container{
+      /*width: 768px;*/
+      width:900px;
+      margin: 0 auto;
+    }
+    .row{
+      padding: 0 15px;
+    }
+    .flex{
+      display: flex;
+      justify-content: space-between;
+    }
+    .row-reverse{
+      flex-direction: row-reverse;
+    }
+    h1 {
+      font-weight: bold;
+      border-bottom: 2px solid;
+      display: inline-block;
+      width: 260px;
+      color: #18bc9c;
+      margin: 4px 0px;
+    }
+
+    .header{
+      text-align: left;
+      padding-bottom: 20px;
+    }
+
+    a {
+      color: #030303;
+      text-decoration: none;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+
+    h2{
+      text-align: left;
+      font-weight: bold;
+      margin:10px 0 5px;
+      width: 260px;
+      display: inline-block;
+      color: #18bc9c;
+    }
+    h3{
+      display: inline;
+      font-weight: bold;
+      color: #18bc9c;
+      margin:0 5px 5px 0;
+    }
+    h4{
+      margin:5px 0;
+    }
+    p{
+      margin: 0 0 10px 0 ; 
+    }
+    ul{
+      margin: 2px 0 0 0;
+      padding:0 0 0 20px;
+    }
+    li {
+      line-height: 1.5em;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li{
+      margin: 0 0 5px 0;
+      padding-left:15px;
+      position: relative;
+    }
+    .skills li::after{
+      content:'>';
+      font-weight: bold;
+      font-size: 20px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top:0;
+      color: #18bc9c;
+    }
+    .position {
+      margin-bottom:20px;
+    }
+    .education-title, .experience-dates{
+      display: inline;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row header">
+      <h1><span class="thin">Jacob</span> Harris</h1>
+      <div class="email"><a href="mailto:jacobpatrickharris@gmail.com">jacob.patrick.harris@gmail.com</a></div>
+      <div class="phone"><a href="tel:3474291660">347.429.1660</a></div>
+    </div>
+    <!-- <div class="row sumary">
+      <p>Front end web developer with 4 years professional experience. My passion is solving interesting problems and producing work that I can be proud of. I think clear communication is just as important as clean code. As a self-taught developer, I'm energized by working with other driven individuals who push me to improve every day.</p>
+    </div> -->
+    <div class="flex row-reverse">
+      <div class="row skills">
+        <div class="section-header"><h2>Skills</h2></div>
+        <div>
+          <h4>Development</h4>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3: Bootstrap, Foundation, modern layout with Flexbox and Grid </li>
+            <li>JS: es6, jQuery, API integration</li>
+            <li>Responsive Development, including remote device testing</li>
+            <li>Preprocessing with SASS</li>
+            <li>CMS: Wordpress, Joomla</li>
+            <li>Accessibility</li>
+            <li>Perfomance Optimization</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tooling &amp; Libraries</h4>
+          <ul>
+            <li>Git/Github</li>
+            <li>Gulp</li>
+            <li>npm</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Odds &amp; Ends</h4>
+            <ul>
+              <li>SEO</li>
+              <li>Responsive HTML email development</li>
+              <li>Adobe Creative Suite</li>
+              <li>Google Analytics</li>
+              <li>Facebook Ad Management and Analytics</li>
+            </ul>
+        </div>
+        <div class="experience">
+          <div class="section-header"><h2>Education</h2></div>
+          <h3 class="experience-title">University of North Carolina Wilmington</h3>
+          <div class="experience-dates">2008 - 2012</div>
+          <div>
+            <b>BS (Cum Laude)</b> - Environmental Science
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <div class="row work">
+        <div class="experience">
+        <div class="section-header"><h2>Experience</h2></div>
+          <div class="position">
+            <h3 class="experience-title">Front-End Developer @ Outer Places</h3>
+            <div class="experience-dates">NYC, Oct 2015 - Present</div>
+            <div class="clear"></div>
+            <h4>Main Project 1: OuterPlaces.com</h4>
+            <p>Media &amp; news site focusing on the intersection of science and science-fiction.</p>
+            <ul>
+              <li>Principal developer, responsible for maintaining and extending site</li>
+              <li>Extended CMS with new features for writers (article preview, better article templating options, new content taxonomies)</li>
+              <li>Halved page load times by implementing best-practices - lazy loading of assets, CSS splitting, server caching</li>
+              <li>Oversaw a growth in site traffic of over 200%</li>
+              <li>Developed AMP and Facebook Instant Articles templates</li>
+              <li>Implemented analytics strategies for tracking &amp; testing user interaction</li>  
+              <li>Contributed to marketing strategy (Facebook campaign strategy &amp; management)</li>
+            </ul>
+
+            <h4>Main Project 2: GetSupplyPod.com</h4>
+            <p>Subscription e-commerce mystery box site.</p>
+            <ul>
+              <li>Principal developer and designer</li>
+              <li>Built on the Cratejoy Platform, using the Jinja templating engine</li>
+              <li>Created marketing material &amp; newsletter campaigns</li>
+            </ul>
+
+            <h4>Other Work</h4>
+            <ul>
+              <li>Occasional client projects - Donovan/Green portfolio site, IMPACT site, Comet Landing page
+            </ul>
+          </div>
+          <div class="position">
+            <h3 class="experience-title">Front-End Developer @ Bluetone Media</h3>
+            <div class="experience-dates">Wilmington, NC Jan 2013 - Oct 2015</div>
+            <ul>
+              <li>Built responsive sites &amp; emails for clients based on design docs (.psd &amp; .ai to code)</li>
+              <li>Worked in close collaboration with team of developers, designer, and project managers</li>
+              <li>Maintained sites built by other developers, including troubleshooting &amp; debugging</li>
+              <!-- <li>Specialized in sites marketing sites for small businesses, restaurants, nonprofits, artists,  etc. Implemented elements including events calendars, ecommerce, user and inventory management, custom CMS interfaces, blogging, social media integration, basic CRM systems</li> -->
+              <!-- <li>SEO to improve clients' SERP presences</li> -->
+              <li>Light back-end work (.NET and PHP)</li>
+              <li>Ensured that projects were on time and within budget</li>
+              <li>Provided designers, project managers, &amp; sales with technical input</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jacob Harris is a Web Developer</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="css/jacob.min.css">
+</head>
+<body>
+  <div class="hero">
+    <nav class="nav container">
+      <ul>
+        <li><a href="index.html">Jacob</a></li>
+        <li><a href="page2.html">Projects</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Another Thing</a></li>
+      </ul>
+    </nav>
+    <div class="container main">
+      <h1>Projects</h1>
+      <p>At Work</p>
+      <ul>
+        <li><a href="http://www.outerplaces.com/" target="_blank">OuterPlaces.com</a> - Principal developer and maintainer for media site serving roughly 1 million visitors monthly.</li>
+        <li><a href="http://getsupplypod.com/" target="_blank">GetSupplyPod.com</a> - Designer and Developer for subscription e-commerce site.</li>
+        <li><a href="http://34.192.122.16/">Impact</a> - lifestyle and media site built for MGM and Sinclair Broadcast group.</li>
+      </ul>
+      <p>For Fun</p>
+      <ul>
+        <li><a href="http://visualdecklist.com/" target="_blak">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.</li>
+        <li><a href="">Bicep</a> - a lightweight CSS layout framework based on flexbox.</li>
+      </ul>
+      
+    </div>
+    <div class="peeking"> ~(˘▾˘~)</div>
+
+  </div>
+  <canvas id="draw"></canvas>
+  <script type="text/javascript" src="js/jacob.js"></script>
+  <script>
+    const canvas = document.querySelector('#draw');
+    const hero = document.querySelector('.hero');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.strokeStyle = '#BADA55';
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.lineWidth = 50;
+    // ctx.globalCompositeOperation = 'multiply';
+
+    let lastX = 0;
+    let lastY = 0;
+    let isFirst = true;
+    let hue = 0;
+    let direction = true;
+
+    function draw(e) {
+      console.log(e);
+      let x = e.offsetX;
+      let y = e.offsetY;
+      if (this != e.target) {
+        x += e.target.offsetLeft;
+        y += e.target.offsetTop;
+      }
+      if (isFirst) {
+        isFirst = false;
+        lastX = x;
+        lastY = y;
+      } else {
+        ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
+        ctx.beginPath();
+        // start from
+        ctx.moveTo(lastX, lastY);
+        // go to
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        [lastX, lastY] = [x, y];
+
+        hue++;
+        if (hue >= 360) {
+          hue = 0;
+        }
+      }
+    }
+
+    hero.addEventListener('mousemove', draw);
+  </script>
+  
+
+</body>
+</html>
