@@ -17,7 +17,7 @@
         <li><a href="">Another Thing</a></li>
       </ul>
     </nav>
-    <div class="container main">
+    <div class="container main projects">
       <h1>Projects</h1>
       <p>At Work</p>
       <ul>
@@ -46,17 +46,15 @@
     ctx.strokeStyle = '#BADA55';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    ctx.lineWidth = 50;
+    ctx.lineWidth = 70;
     // ctx.globalCompositeOperation = 'multiply';
 
     let lastX = 0;
     let lastY = 0;
     let isFirst = true;
     let hue = 0;
-    let direction = true;
 
     function draw(e) {
-      console.log(e);
       let x = e.offsetX;
       let y = e.offsetY;
       if (this != e.target) {
