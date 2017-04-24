@@ -2,7 +2,7 @@
 // Ported from original Metaball script by SATO Hiroyuki
 // http://park12.wakwak.com/~shp/lc/et/en_aics_script.html
 project.currentStyle = {
-    fillColor: '#EB7700'
+    fillColor: '#00D9F7'
 };
 
 var ballPositions = [[60, 129], [610, 73], [486, 363],

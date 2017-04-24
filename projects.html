@@ -6,29 +6,73 @@
   <title>Jacob Harris is a Web Developer</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="css/jacob.min.css">
+  <style>
+    canvas#draw {
+      width: 100%;
+      height: initial;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
+  <div class="projects-page">
     <nav class="nav container">
       <ul>
         <li><a href="index.html">Jacob</a></li>
-        <li><a href="page2.html">Projects</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Another Thing</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="mailto:jacob.patrick.harris@gmail.com">Contact</a></li>
       </ul>
     </nav>
     <div class="container main projects">
       <h1>Projects</h1>
-      <p>At Work</p>
+      <h2>At Work</h2>
       <ul>
-        <li><a href="http://www.outerplaces.com/" target="_blank">OuterPlaces.com</a> - Principal developer and maintainer for media site serving roughly 1 million visitors monthly.</li>
-        <li><a href="http://getsupplypod.com/" target="_blank">GetSupplyPod.com</a> - Designer and Developer for subscription e-commerce site.</li>
-        <li><a href="http://34.192.122.16/">Impact</a> - lifestyle and media site built for MGM and Sinclair Broadcast group.</li>
+        <li>
+          <a href="http://www.outerplaces.com/" target="_blank">OuterPlaces.com</a> - Principal developer and maintainer for media site serving roughly 1 million visitors monthly 
+          <div class="tags">
+            <span class="tag">php/joomla</span>
+            <span class="tag">scss</span>
+            <span class="tag">jQuery</span>
+          </div>
+        </li>
+        <li>
+          <a href="http://getsupplypod.com/" target="_blank">GetSupplyPod.com</a> - Development and Design for a subscription e-commerce site.
+          <div class="tags">
+            <span class="tag">jinja</span>
+            <span class="tag">js</span>
+            <span class="tag">photoshop</span>
+          </div>
+        </li>
+        <li>
+          <a href="http://34.192.122.16/">Impact (demo site)</a> - Mens' lifestyle and media site built for MGM and Sinclair Broadcast group.
+          <div class="tags">
+            <span class="tag">wordpress</span>
+            <span class="tag">scss</span>
+            <span class="tag">gulp</span>
+            <span class="tag">js</span>
+          </div>
+        </li>
       </ul>
-      <p>For Fun</p>
+      <h2>For Fun</h2>
       <ul>
-        <li><a href="http://visualdecklist.com/" target="_blak">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.</li>
-        <li><a href="">Bicep</a> - a lightweight CSS layout framework based on flexbox.</li>
+        <li>
+          <a href="http://visualdecklist.com/" target="_blak">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.
+          <div class="tags">
+            <span class="tag">magicthegathering.io api</span>
+            <span class="tag">webpack</span>
+            <span class="tag">gulp</span>
+            <span class="tag">functional programming</span>
+          </div>
+        </li>
+        <li>
+          <a href="">Bicep</a> - a lightweight CSS layout framework based on flexbox.
+          <div class="tags">
+            <span class="tag">SCSS</span>
+            <span class="tag">gulp</span>
+          </div>
       </ul>
       
     </div>
@@ -39,34 +83,41 @@
   <script type="text/javascript" src="js/jacob.js"></script>
   <script>
     const canvas = document.querySelector('#draw');
-    const hero = document.querySelector('.hero');
+    const page = document.querySelector('.projects-page');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = document.body.clientHeight;
     ctx.strokeStyle = '#BADA55';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    ctx.lineWidth = 70;
+    ctx.lineWidth = 50;
     // ctx.globalCompositeOperation = 'multiply';
 
     let lastX = 0;
     let lastY = 0;
     let isFirst = true;
-    let hue = 0;
+    let hue = 150;
+    let hueUp = true;
+
 
     function draw(e) {
       let x = e.offsetX;
       let y = e.offsetY;
-      if (this != e.target) {
+      if (this !== e.target) {
+        console.log(e);
         x += e.target.offsetLeft;
         y += e.target.offsetTop;
+        if (e.target.classList.contains('tag')) {
+          x -= e.target.offsetLeft;
+          // y -= e.target.offsetTop;
+        }
       }
       if (isFirst) {
         isFirst = false;
         lastX = x;
         lastY = y;
       } else {
-        ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
+        ctx.strokeStyle = `hsl(${hue}, 100%, 48%)`;
         ctx.beginPath();
         // start from
         ctx.moveTo(lastX, lastY);
@@ -75,14 +126,25 @@
         ctx.stroke();
         [lastX, lastY] = [x, y];
 
-        hue++;
-        if (hue >= 360) {
-          hue = 0;
+        if (hueUp) {
+          // going on up
+          hue++;
+        } else {
+          // going back
+          hue--;
         }
+        
+        //hue++;
+        if (hue >= 187 || hue <= 150) {
+          //hue = 0;
+          hueUp = !hueUp;
+        } 
+
+        
       }
     }
 
-    hero.addEventListener('mousemove', draw);
+    page.addEventListener('mousemove', draw);
   </script>
   
 

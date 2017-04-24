@@ -27,7 +27,7 @@ makeNewFace(face);
 
 document.querySelector('.jacob').onblur = function(){
 	console.log('blur');
-	this.innerText('Jacob');
+	this.innerHTML = 'Jacob';
 };
 
 
