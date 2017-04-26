@@ -4,7 +4,13 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
-//ar ugilfy = require('gulp-ugilfy');
+var htmlImport = require('gulp-html-import');
+ 
+gulp.task('import', function () {
+    gulp.src(['./src/index.html', './src/projects.html' , './src/resume.html'])
+        .pipe(htmlImport('./src/components/'))
+        .pipe(gulp.dest('./')); 
+});
 
 gulp.task('styles', function() {
   gulp.src('css/scss/everything.scss')
@@ -26,4 +32,5 @@ gulp.task('js', function() {
 gulp.task('default', function() {
   gulp.watch('css/scss/*', ['styles']);
   gulp.watch('js/*', ['js']);
+  gulp.watch(['src/*.html', 'src/components/*.html'], ['import']);
 });

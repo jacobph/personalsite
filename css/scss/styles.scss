@@ -49,6 +49,7 @@ canvas {
 h1 {
   font-size: 24px;
   line-height: 1.8em;
+  margin-top: 1.2em;
   margin-bottom: 1.2em;
   font-weight: 700;
 
@@ -133,7 +134,7 @@ li {
           font-size: 20px;
         }
       }
-      
+
       @media (min-width: 768px ){
         &:nth-child(1) a {
           padding-left: 0;
@@ -289,6 +290,7 @@ li {
 }
 
 .tags {
+  margin-top: 0.5em;
   .tag {
     font-size: 0.65em;
     padding: 0px 10px;

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jacob Harris is a Web Developer</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link rel="stylesheet" href="css/jacob.min.css">
-</head>
+@import "head.html"
 <body>
   <style>
     canvas#draw {
@@ -19,14 +10,7 @@
     }
   </style>
   <div class="projects-page">
-    <nav class="nav container">
-  <ul>
-    <li><a href="index.html">Jacob</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="mailto:jacob.patrick.harris@gmail.com">Contact</a></li>
-  </ul>
-</nav>
+    @import "nav.html"
     <div class="container main projects">
       <h1>Projects</h1>
       <h2>At Work</h2>
@@ -147,15 +131,4 @@
 
     page.addEventListener('mousemove', draw);
   </script>
-<!-- probably some GA stuff here -->
-<script>
-console.log("%c%s",
-            "color: #EB7700; background: #fff; font-size: 24px; font-family: sans-serif; line-height: 1.5em",
-            "Inspecting things under the hood, huh 👀? Why not check out the github repo while you're at it 👍");
-
-console.log("%c%s",
-            "color: #EB7700; background: white; font-size: 24px; font-family: sans-serif;",
-            "https://github.com/jacobph/personalsite");
-</script>
-</body>
-</html>
+@import "footer.html"
