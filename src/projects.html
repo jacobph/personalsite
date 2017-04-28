@@ -46,10 +46,10 @@
         <li>
           <a href="http://visualdecklist.com/" target="_blak">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.
           <div class="tags">
-            <span class="tag">magicthegathering.io api</span>
+            <span class="tag">magicthegathering.io&nbsp;api</span>
             <span class="tag">webpack</span>
             <span class="tag">gulp</span>
-            <span class="tag">functional programming</span>
+            <span class="tag">functional&nbsp;programming</span>
           </div>
         </li>
         <li>
@@ -77,25 +77,20 @@
     ctx.lineCap = 'round';
     ctx.lineWidth = 40;
     // ctx.globalCompositeOperation = 'multiply';
-
+    
     let lastX = 0;
     let lastY = 0;
     let isFirst = true;
     let hue = 150;
     let hueUp = true;
 
-
     function draw(e) {
       let x = e.offsetX;
       let y = e.offsetY;
       if (this !== e.target) {
-        console.log(e);
+        console.log(e.target);
         x += e.target.offsetLeft;
         y += e.target.offsetTop;
-        if (e.target.classList.contains('tag')) {
-          x -= e.target.offsetLeft;
-          // y -= e.target.offsetTop;
-        }
       }
       if (isFirst) {
         isFirst = false;

@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var htmlImport = require('gulp-html-import');
  
 gulp.task('import', function () {
-    gulp.src(['./src/index.html', './src/projects.html' , './src/resume.html'])
+    gulp.src(['./src/index.html', './src/projects.html' , './src/resume.html', './src/res.html'])
         .pipe(htmlImport('./src/components/'))
         .pipe(gulp.dest('./')); 
 });
