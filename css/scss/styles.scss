@@ -51,7 +51,15 @@ h1 {
   line-height: 1.8em;
   margin-top: 1.2em;
   margin-bottom: 1.2em;
-  font-weight: 700;
+  font-weight: 600;
+
+  &.resume-header {
+    color: $teal;
+
+    .thin {
+      font-weight: 300;
+    }
+  }
 
   @media (min-width: $bp-m) {
     font-size: 32px;
@@ -59,23 +67,35 @@ h1 {
 }
 
 h2 {
-  width: 50%;
-  line-height: 1.8em;
-  font-weight: bold;
   font-size: 24px;
-  font-weight: 700;
-  margin: 24px -15px 12px;
-  background: $purple;
-  color: $white;
-  line-height: 1em;
-  padding: 8px 15px 5px;
+  font-weight: 600;
+
+  &.projects-header {
+    width: 50%;
+    margin: 24px -15px 12px;
+    background: $purple;
+    color: $white;
+    line-height: 1em;
+    padding: 8px 15px 5px;
+  }
+
+  &.resume-header {
+    color: $teal;
+    margin-bottom: 8px;
+  }
+}
+
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 p, 
 li {
   font-size: 20px;
   line-height: 1.8em;
-  font-weight: 700;
+  font-weight: 600;
 
   @media (min-width: $bp-m) {
     font-size: 26px;
@@ -86,6 +106,30 @@ li {
   max-width: 100%;
   width: 1170px;
   padding: 0 15px;
+
+  &.center {
+    margin: 0 auto;
+  }
+
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+[class^="col-"]{
+  width:100%;
+  flex-grow:0;
+}
+
+@media (min-width: $bp-m) {
+  .col-8 {
+    width: 66.666667%;
+  }
+
+  .col-4 {
+    width: 33.333333%;
+  }
 }
 
 .hero {
@@ -137,6 +181,10 @@ li {
         color: #000000;
         border-bottom: 2px solid transparent;
 
+        &:hover {
+          border-color: $black;
+        }
+
         @media (min-width: $bp-m ){
           border-bottom: 3px solid transparent;
           font-size: 20px;
@@ -150,21 +198,21 @@ li {
       }
     }
 
-    li:nth-child(1) a:hover {
-      border-color: $blue;
-    }
+    // li:nth-child(1) a:hover {
+    //   border-color: $orange;
+    // }
 
-    li:nth-child(2) a:hover {
-      border-color: $orange;
-    }
+    // li:nth-child(2) a:hover {
+    //   border-color: $purple;
+    // }
 
-    li:nth-child(3) a:hover {
-      border-color: $black;
-    }
+    // li:nth-child(3) a:hover {
+    //   border-color: $white;
+    // }
 
-    li:nth-child(4) a:hover {
-      border-color: $purple;
-    }
+    // li:nth-child(4) a:hover {
+    //   border-color: $black;
+    // }
   }
 }
 
@@ -230,7 +278,7 @@ li {
 
 .main p a:nth-of-type(4):hover{
   border-color: transparent;
-  //background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-50%);}}%3C/style%3E%3Cpath fill='none' stroke='#EB7700' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-50%);}}%3C/style%3E%3Cpath fill='none' stroke='#EB7600' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
 }
 
 .shadow {
@@ -287,6 +335,10 @@ li {
   }
 }
 
+// projects-page
+// .projects-page {
+//   cursor: url("../img/artistic-brush.svg"), auto;
+// }
 .projects {
   ul {
     li {
@@ -312,15 +364,125 @@ li {
   }
 }
 
+label[for="brush-size"]{
+  position: fixed;
+  display: block;
+  right: 1em;
+  top: 1em;
+}
+
+.brush-size {
+  position: fixed;
+  display:block;
+  right: 1em;
+  top: 3em;
+}
+
 /* resume-page */
 .resume-page  {
   
+  .email,
+  .phone {
+    a {
+      text-decoration: none;
+      color: #000000;
+      margin-bottom: 8px;
+      display: block;
+    }
+  }
+
+  h1 {
+    margin-bottom: 8px;
+    line-height: 1em;
+  }
+
+  
+
+  .work {
+    padding-right: 20px;
+  }
+
+  .position {
+    margin-bottom: 32px;
+  }
+
+  .education {
+    margin-top: 32px;
+  }
+
+  .experience-title {
+    color: $teal;
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  
+  .experience-dates,
+  .education-title {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+
   ul {
     list-style: normal;
     padding-left: 30px;
-    li {
+  }
 
-      font-size: 16px
+  li, p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  h4{
+    font-weight: 600;
+    margin:20px 0 0em;
+  }
+
+  .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li{
+      margin: 0 0 5px 0;
+      padding-left:15px;
+      position: relative;
+    }
+    .skills li::after{
+      content:'>';
+      font-weight: 600;
+      display: block;
+      position: absolute;
+      left: 0;
+      top:0;
+      color: $teal;
+    }
+
+  .flex {
+    margin-top: 32px;
+  }
+
+  .pdf-save {
+    display: block;
+    text-decoration: none;
+    color: $teal;
+    text-align: center;
+    margin: 32px auto;
+    width: 120px;
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+
+    &:hover svg path {
+      fill: $black;
     }
   }
 }

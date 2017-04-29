@@ -13,7 +13,7 @@
     @import "nav.html"
     <div class="container main projects">
       <h1>Projects</h1>
-      <h2>At Work</h2>
+      <h2 class="projects-header">At Work</h2>
       <ul>
         <li>
           <a href="http://www.outerplaces.com/" target="_blank">OuterPlaces.com</a> - Principal developer and maintainer for media site serving roughly 1 million visitors monthly 
@@ -32,7 +32,7 @@
           </div>
         </li>
         <li>
-          <a href="http://34.192.122.16/">Impact (demo site)</a> - Mens' lifestyle and media site built for MGM and Sinclair Broadcast group.
+          <a href="http://34.192.122.16/">Impact (demo site)</a> - Mens' lifestyle and media site built for MGM and Comcast.
           <div class="tags">
             <span class="tag">wordpress</span>
             <span class="tag">scss</span>
@@ -41,10 +41,10 @@
           </div>
         </li>
       </ul>
-      <h2>For Fun</h2>
+      <h2 class="projects-header">For Fun</h2>
       <ul>
         <li>
-          <a href="http://visualdecklist.com/" target="_blak">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.
+          <a href="http://visualdecklist.com/" target="_blank">VisualDecklist.com</a> - Web App for creating graphics out of Magic the Gathering decklists.
           <div class="tags">
             <span class="tag">magicthegathering.io&nbsp;api</span>
             <span class="tag">webpack</span>
@@ -53,7 +53,7 @@
           </div>
         </li>
         <li>
-          <a href="">Bicep</a> - a lightweight CSS layout framework based on flexbox.
+          <a href="https://github.com/jacobph/littleflexgrid" target="_blank">Bicep</a> - a lightweight CSS layout framework based on flexbox.
           <div class="tags">
             <span class="tag">SCSS</span>
             <span class="tag">gulp</span>
@@ -62,6 +62,11 @@
       
     </div>
     <div class="peeking"> ~(˘▾˘~)</div>
+    <div class="brush-controls">
+      <label for="brush-size">Brush Size</label>
+      <input type="range" name="brush-size" class="brush-size" min="20" max="150" value="40" step="1">
+         
+    </div>
 
   </div>
   <canvas id="draw"></canvas>
@@ -69,6 +74,7 @@
   <script>
     const canvas = document.querySelector('#draw');
     const page = document.querySelector('.projects-page');
+    const brushSizeInput = document.querySelector('.brush-size');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = document.body.clientHeight;
@@ -84,11 +90,14 @@
     let hue = 150;
     let hueUp = true;
 
+    function adjustBrushSize(){
+      ctx.lineWidth = brushSizeInput.value;
+    }
+
     function draw(e) {
       let x = e.offsetX;
       let y = e.offsetY;
       if (this !== e.target) {
-        console.log(e.target);
         x += e.target.offsetLeft;
         y += e.target.offsetTop;
       }
@@ -125,5 +134,8 @@
     }
 
     page.addEventListener('mousemove', draw);
+    brushSizeInput.addEventListener('input', adjustBrushSize);
+    brushSizeInput.addEventListener('change', adjustBrushSize);
+
   </script>
 @import "footer.html"
