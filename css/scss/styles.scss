@@ -137,6 +137,7 @@ li {
   overflow: hidden;
   display:flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: flex-start;
   color:black;
   position: relative;
@@ -150,17 +151,25 @@ li {
 
   .peeking {
     margin-top: 50vw;
+    display: none;
 
     @media (min-width: $bp-m) {
       margin-top: 0;
+      display: block;
     }
   }
 }
 
 .nav{
-  padding-top: 20px;
   display: flex;
  
+  @media (min-width: $bp-s) {
+    border-bottom: 0 none;
+  }
+
+  @media (min-width: $bp-m) {
+    padding-top: 20px;
+  }
   ul {
     width: 100%;
     list-style: none;
@@ -168,21 +177,33 @@ li {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(45deg, #8d00ff,#00d9f7);
+    border-image-slice: 1;
 
     @media (min-width: $bp-m) {
       justify-content: flex-start;
+      border-bottom: 0 none;
     }
 
     li {
       a {
-        font-size: 14px;
-        padding: 0 15px;
+        font-size: 12px;
+        padding: 0 10px;
         text-decoration: none;
         color: #000000;
         border-bottom: 2px solid transparent;
 
         &:hover {
-          border-color: $black;
+          background-position: 0 calc(100% - 1.5px);
+          background-size: auto 3px;
+          background-repeat: repeat-x;
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-50%);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+        }
+
+        @media (min-width: $bp-s) {
+          font-size: 14px;
+          padding: 0 10px;
         }
 
         @media (min-width: $bp-m ){
@@ -353,6 +374,7 @@ li {
 .tags {
   margin-top: 0.5em;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 
   .tag {
@@ -360,6 +382,7 @@ li {
     line-height: 1;
     padding: 5px 10px;
     margin-right: 5px;
+    margin-bottom: 5px;
     border: 3px solid currentColor;
   }
 }
@@ -371,6 +394,13 @@ label[for="brush-size"]{
   top: 1em;
 }
 
+.brush-controls {
+  display: none;
+
+  @media (min-width: $bp-m) {
+    display: block;
+  }
+}
 .brush-size {
   position: fixed;
   display:block;
@@ -382,7 +412,8 @@ label[for="brush-size"]{
 .resume-page  {
   
   .email,
-  .phone {
+  .phone,
+  .website {
     a {
       text-decoration: none;
       color: #000000;
@@ -436,8 +467,12 @@ label[for="brush-size"]{
   }
 
   li, p {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
+
+    @media (min-width: $bp-m) {
+      font-size: 14px;
+    }
   }
 
   h4{

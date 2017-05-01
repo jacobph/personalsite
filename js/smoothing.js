@@ -3,8 +3,8 @@ var width, height, center;
 var points = 8;
 var smooth = true;
 var path = new Path({
-  fillColor: '#eb7700',
-  strokeColor: '#eb7700'
+  fillColor: '#00D9F7',
+  strokeColor: '#00D9F7'
 });
 var mousePos = view.center / 2;
 var pathHeight = mousePos.y;
@@ -36,21 +36,21 @@ function onFrame(event) {
     path.smooth({ type: 'continuous' });
 }
 
-// function onMouseMove(event) {
-//   mousePos = event.point;
-// }
+function onMouseMove(event) {
+  mousePos = event.point;
+}
 
-// function onMouseDown(event) {
-//   smooth = !smooth;
-//   if (!smooth) {
-//     // If smooth has been turned off, we need to reset
-//     // the handles of the path:
-//     for (var i = 0, l = path.segments.length; i < l; i++) {
-//       var segment = path.segments[i];
-//       segment.handleIn = segment.handleOut = null;
-//     }
-//   }
-// }
+function onMouseDown(event) {
+  smooth = !smooth;
+  if (!smooth) {
+    // If smooth has been turned off, we need to reset
+    // the handles of the path:
+    for (var i = 0, l = path.segments.length; i < l; i++) {
+      var segment = path.segments[i];
+      segment.handleIn = segment.handleOut = null;
+    }
+  }
+}
 
 // Reposition the path whenever the window is resized:
 function onResize(event) {
