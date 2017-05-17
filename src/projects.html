@@ -65,7 +65,7 @@
     <div class="peeking"> ~(˘▾˘~)</div>
     <div class="brush-controls">
       <label for="brush-size">Brush Size</label>
-      <input type="range" name="brush-size" class="brush-size" min="20" max="150" value="40" step="1">
+      <input type="range" name="brush-size" class="brush-size" min="60" max="160" value="80" step="1">
          
     </div>
 
@@ -82,16 +82,15 @@
     ctx.strokeStyle = '#BADA55';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    ctx.lineWidth = 40;
+    ctx.lineWidth = 70;
     // ctx.globalCompositeOperation = 'multiply';
-    
     let lastX = 0;
     let lastY = 0;
     let isFirst = true;
     let hue = 150;
     let hueUp = true;
 
-    function adjustBrushSize(){
+    function adjustBrushSize() {
       ctx.lineWidth = brushSizeInput.value;
     }
 
@@ -123,20 +122,17 @@
           // going back
           hue--;
         }
-        
-        //hue++;
+        // hue++;
         if (hue >= 187 || hue <= 150) {
-          //hue = 0;
+          // hue = 0;
           hueUp = !hueUp;
-        } 
-
-        
+        }
       }
     }
 
     page.addEventListener('mousemove', draw);
     brushSizeInput.addEventListener('input', adjustBrushSize);
     brushSizeInput.addEventListener('change', adjustBrushSize);
+</script>
 
-  </script>
 @import "footer.html"

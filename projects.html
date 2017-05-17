@@ -37,7 +37,7 @@ jacob.patrick.harris@gmail.com
     }
   </style>
   <div class="projects-page">
-    <nav class="nav container">
+    <nav class="nav container 💩">
   <ul>
     <li><a href="index.html">Jacob</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -99,7 +99,7 @@ jacob.patrick.harris@gmail.com
     <div class="peeking"> ~(˘▾˘~)</div>
     <div class="brush-controls">
       <label for="brush-size">Brush Size</label>
-      <input type="range" name="brush-size" class="brush-size" min="20" max="150" value="40" step="1">
+      <input type="range" name="brush-size" class="brush-size" min="60" max="160" value="80" step="1">
          
     </div>
 
@@ -116,16 +116,15 @@ jacob.patrick.harris@gmail.com
     ctx.strokeStyle = '#BADA55';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
-    ctx.lineWidth = 40;
+    ctx.lineWidth = 70;
     // ctx.globalCompositeOperation = 'multiply';
-    
     let lastX = 0;
     let lastY = 0;
     let isFirst = true;
     let hue = 150;
     let hueUp = true;
 
-    function adjustBrushSize(){
+    function adjustBrushSize() {
       ctx.lineWidth = brushSizeInput.value;
     }
 
@@ -157,27 +156,25 @@ jacob.patrick.harris@gmail.com
           // going back
           hue--;
         }
-        
-        //hue++;
+        // hue++;
         if (hue >= 187 || hue <= 150) {
-          //hue = 0;
+          // hue = 0;
           hueUp = !hueUp;
-        } 
-
-        
+        }
       }
     }
 
     page.addEventListener('mousemove', draw);
     brushSizeInput.addEventListener('input', adjustBrushSize);
     brushSizeInput.addEventListener('change', adjustBrushSize);
+</script>
 
-  </script>
 
 <script>
+/* eslint-disable */
 console.log("%c%s",
             "color: #EB7700; background: #fff; font-size: 24px; font-family: sans-serif; line-height: 1.5em",
-            "Inspecting things under the hood, huh 👀? Why not check out the github repo while you're at it 👍");
+            "Inspecting things under the hood, huh 👀? Why not check out the github repo while you're at it 👇");
 
 console.log("%c%s",
             "color: #EB7700; background: white; font-size: 24px; font-family: sans-serif;",
@@ -190,6 +187,7 @@ console.log("%c%s",
 
   ga('create', 'UA-98321361-1', 'auto');
   ga('send', 'pageview');
+/* eslint-enable */
 </script>
 </body>
 </html>

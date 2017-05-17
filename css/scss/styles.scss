@@ -105,6 +105,7 @@ li {
 .container {
   max-width: 100%;
   width: 1170px;
+  margin: 0 auto;
   padding: 0 15px;
 
   &.center {
@@ -408,6 +409,96 @@ label[for="brush-size"]{
   top: 3em;
 }
 
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 10px 0;
+  width: 200px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: $purple;
+  // border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 3px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: $white;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: $purple;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: $purple;
+  // border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: $white;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: $purple;
+  border: 0px solid #000101;
+  // border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: $purple;
+  border: 0px solid #000101;
+  // border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: $white;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $purple;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: $purple;
+}
+
+
 /* resume-page */
 .resume-page  {
   
@@ -443,6 +534,7 @@ label[for="brush-size"]{
 
   .experience-title {
     color: $teal;
+    margin-bottom: 0.5em;
 
     a {
       text-decoration: none;
@@ -478,6 +570,10 @@ label[for="brush-size"]{
   h4{
     font-weight: 600;
     margin:20px 0 0em;
+  }
+
+  .skills h4 {
+    margin-bottom: 1em;
   }
 
   .skills ul {

@@ -4,7 +4,7 @@
  * Using Math.round() will give you a non-uniform distribution!
  */
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * ((max - min) + 1)) + min;
 }
 
 const faces = [
@@ -24,9 +24,8 @@ const face = getRandomInt(0, faces.length - 1);
 makeNewFace(face);
 
 
-if (document.querySelector('.jacob')){
-  document.querySelector('.jacob').onblur = function(){
-    console.log('blur');
+if (document.querySelector('.jacob')) {
+  document.querySelector('.jacob').onblur = function () {
     this.innerHTML = 'Jacob';
-  }; 
+  };
 }
